@@ -55,7 +55,7 @@ public class AskD implements Serializable {
         re=rr1;
     }
     
-    public String  sendmail() {
+    public String  Sendmail() {
         try {
             SendM mike= new SendM();
             mike.sendMessage(name, emailadd, question);
