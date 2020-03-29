@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      
+     >
+    <h:head>
+       <h:outputStylesheet library="css" name="diet.css" /> 
+        <title>Ask Dietitian </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+       
+    </h:head>
+    <h:body>
+         <header>
+             <div id="nav">
+              <h:graphicImage url="/resources/images/ASN_logo2.png" id="logo"/>
+              
+              <nav>
+                
+                 <ul class="nav">
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">Blog</a></li>
+                     <li><a href="#">Contact</a></li>
+                     <li><a href="#"> About </a></li>
+                 </ul>
+              </nav>
+              <div class="clear"></div>
+             </div>
+             
+         </header>
+         <h:form prependId="false">
+            
+          
+              <div id="main">
+            <p>
+              
+                <label>Name (First Last):</label>
+                <br/>
+                <input type="text"  name="full_name" 
+                       placeholder="John Doe" value="#{askD.name}" 
+                       required="required" title="Enter your name."/>
+            </p>
+            <p>
+                <label>Email:</label>
+                <br/>
+                <input type="email"  name="email" 
+                       value="#{askD.emailadd}" required="required"
+                       title="Enter email."/>
+            </p>
+           
+
+            <p>
+                <label>Enter Question :</label>
+                <br/>
+                <textarea  name="question" cols="75" rows="6"
+                       value="#{askD.question}" required="required"
+                       title="Enter or choose a date."/>
+            </p>
+                  Result : 
+                  <h:outputText value="#{askD.re}"/><br/>
+                   <h:commandButton value="Send Question" action="#{askD.sendmail}" />
+              </div>
+            
+           
+
+           
+
+            
+        </h:form>
+    </h:body>
+</html>
